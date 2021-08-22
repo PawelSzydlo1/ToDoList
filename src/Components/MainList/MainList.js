@@ -10,26 +10,21 @@ function draw(array) {
     <>
       {element.subMenu?.length > 0 && id++ ? (
         <li>
-          {element.childNumber % 2 === 0 ? (
-            <>
-              <input className="inputCheckBox" type="checkbox" id={id} />
-              <label className="labelCheckBox" htmlFor={id}>
-                <Name element={element} />
-              </label>
-            </>
-          ) : (
-            <>
-              <input
-                className="inputRadio"
-                type="radio"
-                name={element.childNumber}
-                id={id}
-              />
-              <label className="labelRadio" htmlFor={id}>
-                <Name element={element} />
-              </label>
-            </>
-          )}
+          <input
+            className={
+              element.childNumber % 2 === 0 ? "inputCheckBox" : "inputRadio"
+            }
+            type={element.childNumber % 2 === 0 ? "checkbox" : "radio"}
+            id={id}
+          />
+          <label
+            className={
+              element.childNumber % 2 === 0 ? "labelCheckBox" : "labelRadio"
+            }
+            htmlFor={id}
+          >
+            <Name element={element} />
+          </label>
           <ul>{draw(element.subMenu)}</ul>
         </li>
       ) : (
