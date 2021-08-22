@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+body {
+  font-size: 1em;
+}
+ul {
+  list-style: none;
+}
+
+.ulMain {
+  margin: 1em;
+}
+
+.ulMain input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.ulMain input ~ ul {
+  display: none;
+}
+
+.ulMain input:checked ~ ul {
+  display: block;
+}
+.ulMain li {
+  line-height: 1.2;
+  position: relative;
+  padding: 0 0 1em 1em;
+}
+
+.ulMain ul li {
+  padding: 0em 0em 0 1em;
+}
+
+.ulMain > li:last-child {
+  padding-bottom: 0;
+}
+
+.ulLabel {
+  position: relative;
+  display: inline-block;
+  background: #fff;
+}
+
+.ulLabel, .ulLabel2 {
+  cursor: pointer;
+  font-weight: 500;
+}
+label.ulLabel:hover {
+  color: #666;
+}
+label.ulLabel:before {
+  background: rgb(41, 179, 233);
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  float: left;
+  margin: 0 1em 0 -2em;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.3em;
+  content: "+";
+  text-align: center;
+  font-weight: 900;
+  line-height: 0.75em;
+}
+label.ulLabel2:before {
+  font-weight: 900;
+  background: rgb(41, 179, 233);
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  float: left;
+  margin: 0 1em 0 -2em;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  content: "+";
+  text-align: center;
+
+  line-height: 0.75em;
+}
+
+:checked ~ label.ulLabel:before {
+  content: "-";
+}
+
+:checked ~ label.ulLabel2:before {
+  content: "-";
+}
+.ulMain li:before {
+  position: absolute;
+  top: -2em;
+  bottom: 2em;
+  left: -1.5em;
+  display: block;
+  width: 0;
+  height: auto;
+  border-left: 1px solid #777;
+  content: "";
+}
+.ulMain li:first-child:before {
+  top: -1em;
+}
+.ulMain > li:before {
+  border: none;
+}
+
+.ulMain li:last-child::before {
+  height: 0;
+}
+
+.ulLabel:after {
+  position: absolute;
+  top: -2em;
+  left: -2.5em;
+  display: block;
+  height: 2.5em;
+  width: 0.3em;
+  border-bottom: 1px solid #777;
+  border-left: 1px solid #777;
+  content: "";
+}
+.ulLabel2:after {
+  position: absolute;
+  top: -2em;
+  left: -1.5em;
+  display: block;
+  height: 2.5em;
+  width: 0.3em;
+  border-bottom: 1px solid #777;
+  border-left: 1px solid #777;
+
+  content: "";
+}
+.ulLabel2:first:after{
+  top: -1em;
+}
+
+.ulMain > li > label.ulLabel:after {
+  position: absolute;
+  top: 0;
+  left: -2.5em;
+  display: block;
+  height: 0.5em;
+  width: 1em;
+  border: none;
+  content: "";
+}
+
+:checked ~ label.ulLabel:last-child:after {
+
+  bottom: 0em;
+  top: -0.5em;
+  height: 1em;
+}
+
+:checked ~ label.ulLabel2:after {
+  border-top: 1px solid #777;
+  border-bottom: 0;
+
+  bottom: 0;
+  top: 0.5em;
+  height: auto;
+}
+
+
+.container {
+  padding: 1em;
+}
+span:last-child {
+  display: flex;
+  word-wrap: break-word;
+}
+
+.test span:after {
+  position: absolute;
+  top: -2em;
+  left: -1.5em;
+  display: block;
+  height: 2.5em;
+  width: 1em;
+  border-bottom: 1px solid #777;
+  border-left: 1px solid #777;
+  content: "";
+}
+
+.test:first-child span:after {
+  height: 1.5em;
+  top: -1em;
+}
+
+.test:nth-child(odd) {
+  background: rgb(231, 231, 231);
+}
+
+.ulMain .test:before {
+  border: none;
+}
