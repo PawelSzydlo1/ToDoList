@@ -30,6 +30,21 @@ ul {
     line-height: 1.2;
     position: relative;
     padding: 0 0 1em 1em;
+    animation: showList 0.5s;
+
+    @keyframes showList {
+      0% {
+        opacity: 0;
+        top: 50px;
+      }
+      75% {
+        opacity: 0.5;
+        top: 0px;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
     &::before {
       position: absolute;
@@ -97,16 +112,9 @@ ul {
       }
     }
   }
-  //   & ~ label.labelRadio {
-  //     &:after {
-  //       border-top: 1px solid #777;
-  //       border-bottom: 0;
-
-  //       bottom: 0;
-  //       top: 0.5em;
-  //       height: auto;
-  //     }
-  //   }
+  .mainList .labelCheckBox:first-child:after {
+    border: none;
+  }
 }
 
 .labelCheckBox {
