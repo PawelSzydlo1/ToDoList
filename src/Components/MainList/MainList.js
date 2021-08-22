@@ -1,6 +1,7 @@
 import React from "react";
 import { dataJSON } from "../../dataJSON";
-import "./index.css";
+import { Name } from "./Name";
+import "./styled.scss";
 
 let id = 0;
 
@@ -8,41 +9,33 @@ function draw(array) {
   return array.map((element) => (
     <>
       {element.subMenu?.length > 0 && id++ ? (
-        <li className="test2">
+        <li>
           {element.childNumber % 2 === 0 ? (
             <>
-              <input className="ulInput" type="checkbox" id={id} />
-              <label className="ulLabel" htmlFor={id}>
-                {element.name.split(" ")[0]} {element.name.split(" ")[1]}
-                <br />
-                {element.name.split(" ")[2] !== undefined ?
-                (element.name.split(" ")[2]):(<br/>)}
+              <input className="inputCheckBox" type="checkbox" id={id} />
+              <label className="labelCheckBox" htmlFor={id}>
+                <Name element={element} />
               </label>
             </>
           ) : (
             <>
               <input
-                className="ulInput2"
+                className="inputRadio"
                 type="radio"
                 name={element.childNumber}
                 id={id}
               />
-              <label className="ulLabel2" htmlFor={id}>
-              {element.name.split(" ")[0]} {element.name.split(" ")[1]}
-                <br />
-                {element.name.split(" ")[2] !== undefined ?
-                (element.name.split(" ")[2]):(<br/>)}
+              <label className="labelRadio" htmlFor={id}>
+                <Name element={element} />
               </label>
             </>
           )}
           <ul>{draw(element.subMenu)}</ul>
         </li>
       ) : (
-        <li className="test">
+        <li className="lastElement">
           <span>
-            {element.name.split(" ")[0]} {element.name.split(" ")[1]}
-            <br />
-            {element.name.split(" ")[2]}
+            <Name element={element} />
           </span>
         </li>
       )}
@@ -53,7 +46,7 @@ function draw(array) {
 export function MainList() {
   return (
     <div className="container">
-      <ul className="ulMain">{draw(dataJSON)}</ul>
+      <ul className="mainList">{draw(dataJSON)}</ul>
     </div>
   );
 }

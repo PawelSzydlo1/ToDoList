@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+body {
+  font-size: 1em;
+}
+
+ul {
+  list-style: none;
+}
+
+.mainList {
+  margin: 1em;
+}
+
+.mainList input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.mainList input:checked ~ ul {
+  display: block;
+}
+
+.mainList input ~ ul {
+  display: none;
+}
+
+.mainList li {
+  line-height: 1.2;
+  position: relative;
+  padding: 0 0 1em 1em;
+}
+
+.mainList li::before {
+  position: absolute;
+  top: -2em;
+  bottom: 2em;
+  left: -1.5em;
+  display: block;
+  width: 0;
+  height: auto;
+  border-left: 1px solid #777;
+  content: "";
+}
+
+.mainList li:first-child:before {
+  top: -1em;
+}
+
+.mainList li:last-child::before {
+  height: 0;
+}
+
+.mainList ul li {
+  padding: 0em 0em 0 1em;
+}
+
+.mainList > li > .labelCheckBox::after {
+  position: absolute;
+  top: 0;
+  left: -2.5em;
+  display: block;
+  height: 0.5em;
+  width: 1em;
+  border: none;
+  content: "";
+}
+
+.mainList > li:last-child {
+  padding-bottom: 0;
+}
+
+.mainList > li::before {
+  border: none;
+}
+
+:checked ~ label.labelRadio:before {
+  content: "-";
+}
+
+:checked ~ label.labelCheckBox:before {
+  content: "-";
+}
+
+:checked ~ label.labelCheckBox:last-child:after {
+  bottom: 0em;
+  top: -0.5em;
+  height: 1em;
+}
+
+.labelCheckBox {
+  position: relative;
+  display: inline-block;
+  background: #fff;
+}
+
+.labelCheckBox:before {
+  background: #29b3e9;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  float: left;
+  margin: 0 1em 0 -2em;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.3em;
+  content: "+";
+  text-align: center;
+  font-weight: 900;
+  line-height: 0.75em;
+}
+
+.labelCheckBox::after {
+  position: absolute;
+  top: -2em;
+  left: -2.5em;
+  display: block;
+  height: 2.5em;
+  width: 0.3em;
+  border-bottom: 1px solid #777;
+  border-left: 1px solid #777;
+  content: "";
+}
+
+.labelRadio:before {
+  font-weight: 900;
+  background: #29b3e9;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  float: left;
+  margin: 0 1em 0 -2em;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  content: "+";
+  text-align: center;
+  line-height: 0.75em;
+}
+
+.labelRadio::after {
+  position: absolute;
+  top: -2em;
+  left: -1.5em;
+  display: block;
+  height: 2.5em;
+  width: 0.3em;
+  border-bottom: 1px solid #777;
+  border-left: 1px solid #777;
+  content: "";
+}
+
+.labelCheckBox,
+.labelRadio {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.labelCheckBox:hover,
+.labelRadio:hover {
+  color: #666;
+}
+
+.lastElement span {
+  color: #5e5959;
+}
+
+.lastElement span::after {
+  position: absolute;
+  top: -2em;
+  left: -1.5em;
+  display: block;
+  height: 2.5em;
+  width: 1em;
+  border-bottom: 1px solid #777;
+  border-left: 1px solid #777;
+  content: "";
+}
+
+.lastElement:first-child span::after {
+  height: 1.5em;
+  top: -1em;
+}
+
+.lastElement:nth-child(odd) {
+  background: #e2e1e1;
+}
+
+span:last-child {
+  display: flex;
+  word-wrap: break-word;
+}
+
+.container {
+  padding: 1em;
+}
